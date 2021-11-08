@@ -1,15 +1,17 @@
 //Components Page
 import Home from "./components/HomeComponent";
+import Navbar from "./components/NavbarComponent";
 //Chakra UI
-import { Container } from "@chakra-ui/react";
+import { Container, useColorModeValue } from "@chakra-ui/react";
 
 const App: React.FC = () => {
   return (
-    <Container maxW="full">
+    <Container maxW="full" height="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+      <Navbar brand="SHOPPING CART"/>
       <Home 
-        title="the platform that takes you to your" 
-        subtitle="favorite products" 
-        description="find what you like best without leaving home" 
+        title="The platform that takes you to your" 
+        subtitle="Favorite products" 
+        description="Find what you like best without leaving home" 
       />
     </Container>
   );
