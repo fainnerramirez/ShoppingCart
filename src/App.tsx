@@ -9,6 +9,7 @@ import { Container, useColorModeValue } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { ROUTE } from "./Route";
 
+
 const App: React.FC = () => {
 
   const bg = useColorModeValue('gray.50', 'gray.900');
@@ -22,7 +23,7 @@ const App: React.FC = () => {
               <Home 
                 title="La plataforma que tiene tus productos favoritos" 
                 subtitle="sin salir de casa" 
-                description="¡Consigue lo que más te gusta en un solo lugar!" />
+                description="¡Consígue lo que más te gusta en un sólo lugar!" />
             </Route>
             <Route exact path={ROUTE.PRODUCTS} component={Products} />
             <Route path="*" component={ NotFound404 } />

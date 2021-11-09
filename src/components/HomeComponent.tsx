@@ -1,14 +1,12 @@
 //Chakra UI
 import { Container, Text, Box, Heading, Button, Flex, useColorModeValue } from "@chakra-ui/react"
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+//Types
+import { propsHome } from "../Types";
+//react-router-dom
+import { Link } from "react-router-dom";
 
-type props = {
-    title: string,
-    subtitle: string,
-    description: string
-}
-
-const Home: React.FC<props> =  ({ title, subtitle, description }: props) => {
+const Home: React.FC<propsHome> =  ({ title, subtitle, description }: propsHome) => {
 
     const color = useColorModeValue('gray.900', 'gray.50');
 
@@ -31,10 +29,12 @@ const Home: React.FC<props> =  ({ title, subtitle, description }: props) => {
                 </Box>
 
                 <Box mt={10}>
-                    <Button as="a" variant="btn-primary" cursor="pointer" _hover={{color: "#FF0080", backgroundColor:"gray.50", outline: "2px solid #FF0080"}}>
-                        Comprar
-                        <ArrowForwardIcon ml={2} w={6} h={5} />
-                    </Button>
+                    <Link to="products">
+                        <Button as="a" variant="btn-primary" cursor="pointer" _hover={{color: "#FF0080", backgroundColor:"gray.50", outline: "2px solid #FF0080"}}>
+                            Comprar
+                            <ArrowForwardIcon ml={2} w={6} h={5} />
+                        </Button>
+                    </Link>
                 </Box>
             </Flex>
         </Container>

@@ -1,10 +1,7 @@
-import {Text} from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
+import { propsFooter } from "../Types";
 
-type props = {
-    footer: string
-}
-
-const Footer: React.FC<props> = ({footer}: props) => {
+const Footer: React.FC<propsFooter> = ({ footer }: propsFooter) => {
     return (
         <Text
             bgGradient="linear(to-l, #7928CA, #FF0080)"

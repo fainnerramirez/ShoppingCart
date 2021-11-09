@@ -17,17 +17,18 @@ import {
   Container
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Icon } from "@chakra-ui/icons";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
 import { Link } from "react-router-dom";
 
-type props = {
-    brand: string
-}
+import { propsNavbar } from "../Types";
 
-const Navbar: React.FC<props> = ({ brand }: props) => {
+const Navbar: React.FC<propsNavbar> = ({ brand }: propsNavbar) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const bg = useColorModeValue('gray.50', 'gray.900')
-  const color = useColorModeValue('blue.600', 'blue.100');
+  const color = useColorModeValue('pink.600', 'pink.400');
   const colorText = useColorModeValue('purple.600', 'gray.50');
   
   return (
@@ -47,13 +48,18 @@ const Navbar: React.FC<props> = ({ brand }: props) => {
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
-              <Flex flexDir="row" w={250} justifyContent="space-around">
-                <Text color={colorText} fontSize='1.2em' fontWeight="bold" mt={2}>
+              <Flex flexDir="row" w={350} justifyContent="space-around">
+                <Text color={colorText} fontSize='1.1em' fontWeight="bold" mt={2}>
                   <Link to="/">Inicio</Link>
                 </Text>
-                <Text color={colorText} fontSize='1.2em' fontWeight="bold" mt={2}>
+                <Text color={colorText} fontSize='1.1em' fontWeight="bold" mt={2}>
                   <Link to="/products">Productos</Link>
                 </Text>
+
+                <Flex flexDir="row">
+                  <Icon as={ AiOutlineShoppingCart } color={colorText} fontSize='1.6em' fontWeight="bold" mt={2}></Icon>
+                  <Text color={colorText} fontSize='1.1em' fontWeight="bold" mt={2}>(0)</Text>
+                </Flex>
               </Flex>
 
               <Button onClick={toggleColorMode}>
@@ -87,9 +93,9 @@ const Navbar: React.FC<props> = ({ brand }: props) => {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem color={color}>Perfil</MenuItem>
-                  <MenuItem color={color}>Account Settings</MenuItem>
-                  <MenuItem color={color}>Logout</MenuItem>
+                  <MenuItem color={color}>Tus Compras</MenuItem>
+                  <MenuItem color={color}>Configuración</MenuItem>
+                  <MenuItem color={color}>Salir</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>
