@@ -1,19 +1,35 @@
 //Components Page
 import Home from "./components/HomeComponent";
-import Navbar from "./components/NavbarComponent";
+import Layout from "./components/LayoutComponent";
+import Products from "./components/ProductsComponent";
+import NotFound404 from "./components/NotFoundComponent";
 //Chakra UI
 import { Container, useColorModeValue } from "@chakra-ui/react";
+//React router dom
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { ROUTE } from "./Route";
 
 const App: React.FC = () => {
+
+  const bg = useColorModeValue('gray.50', 'gray.900');
+
   return (
-    <Container maxW="full" height="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
-      <Navbar brand="SHOPPING CART"/>
-      <Home 
-        title="The platform that takes you to your" 
-        subtitle="Favorite products" 
-        description="Find what you like best without leaving home" 
-      />
-    </Container>
+    <Router>
+      <Container maxW="full" h="100vh" bg={bg}>
+        <Layout>
+          <Switch>
+            <Route exact path={ROUTE.HOME} >
+              <Home 
+                title="La plataforma que tiene tus productos favoritos" 
+                subtitle="sin salir de casa" 
+                description="¡Consigue lo que más te gusta en un solo lugar!" />
+            </Route>
+            <Route exact path={ROUTE.PRODUCTS} component={Products} />
+            <Route path="*" component={ NotFound404 } />
+          </Switch>
+        </Layout>
+      </Container>
+    </Router>
   );
 }
 

@@ -1,3 +1,4 @@
+//Chakra UI
 import { Container, Text, Box, Heading, Button, Flex, useColorModeValue } from "@chakra-ui/react"
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 
@@ -8,6 +9,8 @@ type props = {
 }
 
 const Home: React.FC<props> =  ({ title, subtitle, description }: props) => {
+
+    const color = useColorModeValue('gray.900', 'gray.50');
 
     return(
         <Container maxW="70%" textAlign="center">
@@ -20,16 +23,16 @@ const Home: React.FC<props> =  ({ title, subtitle, description }: props) => {
                             fontSize="6xl"
                             fontWeight="extrabold"
                             >
-                            { title }
+                            {title}
                         </Text>
                         <Text color="yellow.500">{ subtitle }</Text>   
                     </Heading>
-                    <Text mt={10} fontSize="3xl" textAlign="center" color={useColorModeValue('gray.900', 'gray.50')}>{ description }</Text>
+                    <Text mt={10} fontSize="3xl" textAlign="center" color={color}>{ description }</Text>
                 </Box>
 
                 <Box mt={10}>
                     <Button as="a" variant="btn-primary" cursor="pointer" _hover={{color: "#FF0080", backgroundColor:"gray.50", outline: "2px solid #FF0080"}}>
-                        Lets go buy
+                        Comprar
                         <ArrowForwardIcon ml={2} w={6} h={5} />
                     </Button>
                 </Box>

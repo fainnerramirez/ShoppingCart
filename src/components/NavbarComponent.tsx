@@ -1,10 +1,7 @@
-
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
   Avatar,
-  Link,
   Button,
   Menu,
   MenuButton,
@@ -16,9 +13,11 @@ import {
   Stack,
   useColorMode,
   Center,
-  Text
+  Text,
+  Container
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Link } from "react-router-dom";
 
 type props = {
     brand: string
@@ -27,11 +26,15 @@ type props = {
 const Navbar: React.FC<props> = ({ brand }: props) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const bg = useColorModeValue('gray.50', 'gray.900')
+  const color = useColorModeValue('blue.600', 'blue.100');
+  const colorText = useColorModeValue('purple.600', 'gray.50');
+  
   return (
-    <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+    <Container maxW="container.xl">
+      <Box bg={bg} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>
+          <Flex>
             <Text
                 bgGradient="linear(to-l, #7928CA, #FF0080)"
                 bgClip="text"
@@ -40,12 +43,21 @@ const Navbar: React.FC<props> = ({ brand }: props) => {
             >
                 { brand }
             </Text>
-          </Box>
+          </Flex>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
+              <Flex flexDir="row" w={250} justifyContent="space-around">
+                <Text color={colorText} fontSize='1.2em' fontWeight="bold" mt={2}>
+                  <Link to="/">Inicio</Link>
+                </Text>
+                <Text color={colorText} fontSize='1.2em' fontWeight="bold" mt={2}>
+                  <Link to="/products">Productos</Link>
+                </Text>
+              </Flex>
+
               <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon color="#1a2537"/> : <SunIcon color="gray.50"/>}
+                {colorMode === 'light' ? <MoonIcon color={color}/> : <SunIcon color={color}/>}
               </Button>
 
               <Menu>
@@ -58,7 +70,7 @@ const Navbar: React.FC<props> = ({ brand }: props) => {
                   >
                   <Avatar
                     size={'sm'}
-                    src={'https://avatars.dicebear.com/api/male/username.svg'}
+                    src={'https://i.imgur.com/l4LFUyW.jpg'}
                   />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
@@ -66,25 +78,25 @@ const Navbar: React.FC<props> = ({ brand }: props) => {
                   <Center>
                     <Avatar
                       size={'2xl'}
-                      src={'https://avatars.dicebear.com/api/male/username.svg'}
+                      src={'https://i.imgur.com/l4LFUyW.jpg'}
                     />
                   </Center>
                   <br />
-                  <Center>
-                    <p>Username</p>
+                  <Center color={color}>
+                    <p>Fainner Ramirez</p>
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem color={color}>Perfil</MenuItem>
+                  <MenuItem color={color}>Account Settings</MenuItem>
+                  <MenuItem color={color}>Logout</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>
           </Flex>
         </Flex>
       </Box>
-    </>
+    </Container>
   );
 }
 
