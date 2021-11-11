@@ -1,5 +1,5 @@
 import { Text } from "@chakra-ui/react";
-import { propsFooter } from "../Types";
+import { propsFooter } from "../const/Types";
 
 const Footer: React.FC<propsFooter> = ({ footer }: propsFooter) => {
     return (
@@ -9,7 +9,7 @@ const Footer: React.FC<propsFooter> = ({ footer }: propsFooter) => {
             fontSize="2xl"
             fontWeight="extrabold"
             textAlign="center"
-            mt={20}
+            mt={10}
         >
         { footer }
     </Text>

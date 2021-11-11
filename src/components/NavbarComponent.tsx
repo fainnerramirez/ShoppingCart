@@ -22,12 +22,13 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { Link } from "react-router-dom";
 
-import { propsNavbar } from "../Types";
+import { propsNavbar } from "../const/Types";
+import * as COLOR from '../const/Colors';
 
 const Navbar: React.FC<propsNavbar> = ({ brand }: propsNavbar) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const bg = useColorModeValue('gray.50', 'gray.900')
+  const bg = useColorModeValue('gray.50', COLOR.dark)
   const color = useColorModeValue('pink.600', 'pink.400');
   const colorText = useColorModeValue('purple.600', 'gray.50');
   
@@ -36,14 +37,16 @@ const Navbar: React.FC<propsNavbar> = ({ brand }: propsNavbar) => {
       <Box bg={bg} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Flex>
-            <Text
-                bgGradient="linear(to-l, #7928CA, #FF0080)"
-                bgClip="text"
-                fontSize="2xl"
-                fontWeight="extrabold"
-            >
-                { brand }
+            <Link to="/">
+              <Text
+                  bgGradient={ COLOR.bgGradientText }
+                  bgClip="text"
+                  fontSize="2xl"
+                  fontWeight="extrabold"
+              >
+                  { brand }
             </Text>
+            </Link>
           </Flex>
 
           <Flex alignItems={'center'}>
@@ -62,8 +65,8 @@ const Navbar: React.FC<propsNavbar> = ({ brand }: propsNavbar) => {
                 </Flex>
               </Flex>
 
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon color={color}/> : <SunIcon color={color}/>}
+              <Button onClick={toggleColorMode} bg={ bg } _focus={{color: "#fffff"}}>
+                {colorMode === 'light' ? <MoonIcon color={COLOR.primary} /> : <SunIcon color={COLOR.secondary} />}
               </Button>
 
               <Menu>

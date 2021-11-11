@@ -6,7 +6,7 @@ const Layout: React.FC = ({ children }) => {
     <>
       <Navbar brand="SHOPPING CART"/>
       {children}
-      <Footer footer="Fainner Ramirez | Carlos Borrego" />
+      {/*<Footer footer="Fainner Ramirez | Carlos Borrego" />*/}
     </>
   );
 };

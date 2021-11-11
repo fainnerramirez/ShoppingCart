@@ -7,12 +7,12 @@ import NotFound404 from "./components/NotFoundComponent";
 import { Container, useColorModeValue } from "@chakra-ui/react";
 //React router dom
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { ROUTE } from "./Route";
-
+import { ROUTE } from "./const/Route";
+import * as COLOR from "./const/Colors";
 
 const App: React.FC = () => {
 
-  const bg = useColorModeValue('gray.50', 'gray.900');
+  const bg = useColorModeValue('gray.50', COLOR.dark);
 
   return (
     <Router>

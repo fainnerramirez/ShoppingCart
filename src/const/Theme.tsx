@@ -24,10 +24,13 @@ export const theme = extendTheme(
           },
         },
         // 3. We can add a new visual variant
-        variants: {
-          "btn-primary": {
-            bg: "#FF0080",            
-          },
+        variants: {},
+      },
+
+      Headding: {
+        // 1. We can update the base styles
+        baseStyle: {
+          fontWeight: "bolder", // Normally, it is "semibold"
         },
       },
     },
@@ -38,9 +41,6 @@ export const theme = extendTheme(
           bg: "gray.50",
           color: "gray.900"
         }
-      },
-      colors: {
-        primary: "#FF0080"
       },
     },
 
