@@ -2,6 +2,9 @@ import {
   Box,
   Flex,
   Avatar,
+  HStack,
+  Link,
+  IconButton,
   Button,
   Menu,
   MenuButton,
@@ -9,101 +12,79 @@ import {
   MenuItem,
   MenuDivider,
   useDisclosure,
+  useColorMode,
   useColorModeValue,
   Stack,
-  useColorMode,
-  Center,
-  Text,
   Container
 } from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Icon } from "@chakra-ui/icons";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { HamburgerIcon, CloseIcon,  MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { propsNavbar } from '../utils/Types';
 
-import { Link } from "react-router-dom";
-
-import { propsNavbar } from "../const/Types";
-import * as COLOR from '../const/Colors';
-
-const Navbar: React.FC<propsNavbar> = ({ brand }: propsNavbar) => {
-  const { colorMode, toggleColorMode } = useColorMode();
+const Navbar: React.FC<propsNavbar> = ( {  brand } ) => {
+  const Links = ['Productos', 'Home'];
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const bg = useColorModeValue('gray.50', COLOR.dark)
-  const color = useColorModeValue('pink.600', 'pink.400');
-  const colorText = useColorModeValue('purple.600', 'gray.50');
-  
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <Container maxW="container.xl">
-      <Box bg={bg} px={4}>
+    <Container maxW="container.lg">
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Flex>
-            <Link to="/">
-              <Text
-                  bgGradient={ COLOR.bgGradientText }
-                  bgClip="text"
-                  fontSize="2xl"
-                  fontWeight="extrabold"
-              >
-                  { brand }
-            </Text>
-            </Link>
-          </Flex>
-
+          <IconButton
+            size={'md'}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={'Open Menu'}
+            display={{ md: 'none' }}
+            color="#1a2537"
+            onClick={isOpen ? onClose : onOpen}
+          />
+          <HStack spacing={8} alignItems={'center'}>
+            <Box>{ brand }</Box>
+            <HStack
+              as={'nav'}
+              spacing={4}
+              display={{ base: 'none', md: 'flex' }}>
+              {Links.map((link) => (
+                <p key={link}>{link}</p>
+              ))}
+            </HStack>
+          </HStack>
           <Flex alignItems={'center'}>
-            <Stack direction={'row'} spacing={7}>
-              <Flex flexDir="row" w={350} justifyContent="space-around">
-                <Text color={colorText} fontSize='1.1em' fontWeight="bold" mt={2}>
-                  <Link to="/">Inicio</Link>
-                </Text>
-                <Text color={colorText} fontSize='1.1em' fontWeight="bold" mt={2}>
-                  <Link to="/products">Productos</Link>
-                </Text>
-
-                <Flex flexDir="row">
-                  <Icon as={ AiOutlineShoppingCart } color={colorText} fontSize='1.6em' fontWeight="bold" mt={2}></Icon>
-                  <Text color={colorText} fontSize='1.1em' fontWeight="bold" mt={2}>(0)</Text>
-                </Flex>
-              </Flex>
-
-              <Button onClick={toggleColorMode} bg={ bg } _focus={{color: "#fffff"}}>
-                {colorMode === 'light' ? <MoonIcon color={COLOR.primary} /> : <SunIcon color={COLOR.secondary} />}
+            <Button onClick={toggleColorMode}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
-
-              <Menu>
-                <MenuButton
-                  as={Button}
-                  rounded={'full'}
-                  variant={'link'}
-                  cursor={'pointer'}
-                  minW={0}
-                  >
-                  <Avatar
-                    size={'sm'}
-                    src={'https://i.imgur.com/l4LFUyW.jpg'}
-                  />
-                </MenuButton>
-                <MenuList alignItems={'center'}>
-                  <br />
-                  <Center>
-                    <Avatar
-                      size={'2xl'}
-                      src={'https://i.imgur.com/l4LFUyW.jpg'}
-                    />
-                  </Center>
-                  <br />
-                  <Center color={color}>
-                    <p>Fainner Ramirez</p>
-                  </Center>
-                  <br />
-                  <MenuDivider />
-                  <MenuItem color={color}>Tus Compras</MenuItem>
-                  <MenuItem color={color}>Configuración</MenuItem>
-                  <MenuItem color={color}>Salir</MenuItem>
-                </MenuList>
-              </Menu>
-            </Stack>
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={'full'}
+                variant={'link'}
+                cursor={'pointer'}
+                minW={0}>
+                <Avatar
+                  size={'sm'}
+                  src={
+                    'https://i.imgur.com/l4LFUyW.jpg'
+                  }
+                />
+              </MenuButton>
+              <MenuList>
+                <MenuItem>Link 1</MenuItem>
+                <MenuItem>Link 2</MenuItem>
+                <MenuDivider />
+                <MenuItem>Link 3</MenuItem>
+              </MenuList>
+            </Menu>
           </Flex>
         </Flex>
+
+        {isOpen ? (
+          <Box pb={4} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={4}>
+              {Links.map((link) => (
+                <p key={link}>{link}</p>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
       </Box>
     </Container>
   );

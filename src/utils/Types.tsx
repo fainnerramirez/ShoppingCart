@@ -11,3 +11,8 @@ export type propsHome = {
 export type propsFooter = {
     footer: string
 }
+
+export type propsCard = {
+    name: string,
+    description: string
+}
