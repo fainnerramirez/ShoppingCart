@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "shoppingcart",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -51,5 +51,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "En este proyecto colaboran Fainner Ramirez y Carlos Borrego",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fainnerramirez/shoppingCart.git"
+  },
+  "keywords": [],
+  "author": "Fainner Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fainnerramirez/shoppingCart/issues"
+  },
+  "homepage": "https://github.com/fainnerramirez/shoppingCart#readme"
 }
