@@ -1,12 +1,11 @@
-import { extendTheme, withDefaultVariant } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
+import { extendTheme, useColorModeValue } from "@chakra-ui/react";
 import "@fontsource/montserrat";
 import "@fontsource/open-sans";
 import "@fontsource/inter";
 import "@fontsource/nunito";
 
-export const theme = extendTheme(
-  //withDefaultVariant({ variant: "outline", components: ["Button"] }),
-
+/*export const theme = extendTheme(
   {
     components: {
       Button: {
@@ -36,12 +35,29 @@ export const theme = extendTheme(
     },
 
     styles: {
-      global: {},
+      global: {
+        bg: mode("gray.100", "yellow.900"),
+      },
     },
 
     fonts: {
       heading: "Nunito",
       body: "Nunito",
     },
-  }
+  },
+  styles
 );
+*/
+
+export const theme = extendTheme({
+  styles: {
+    global: (props: any) => ({
+      body: {
+        fontFamily: "body",
+        color: mode("gray.800", "whiteAlpha.900")(props),
+        bg: mode("white", "#0a1229")(props),
+        lineHeight: "base",
+      },
+    }),
+  },
+});

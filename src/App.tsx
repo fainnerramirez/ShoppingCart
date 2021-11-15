@@ -16,7 +16,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Container maxW="100%" bg={bg} p={0}>
+      <Container maxW="100%" p={0}>
         <Layout>
           <Switch>
             <Route exact path={ROUTE.HOME} component={HomePage} />
