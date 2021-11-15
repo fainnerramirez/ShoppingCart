@@ -16,3 +16,7 @@ export type propsCard = {
   name: string;
   categoria: string;
 };
+
+export type propsCategory = {
+  categoria: string;
+};

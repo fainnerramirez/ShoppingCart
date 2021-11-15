@@ -22,7 +22,7 @@ const Home: React.FC<propsHome> = ({ title, subtitle, description }) => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
 
   return (
-    <Container maxW={{ base: "100%", sm: "100%", md: "70%", lg: "80%" }}>
+    <Container maxW={{ base: "100%", sm: "100%", md: "70%", lg: "80%" }} p={0}>
       <Flex
         mt={10}
         justifyContent="center"

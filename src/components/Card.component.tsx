@@ -1,16 +1,16 @@
 import { Box, Image, Button, Text, useColorModeValue } from "@chakra-ui/react";
-import { propsCard } from "../utils/Types";
-//Styled-components
+import { propsCategory } from "../utils/Types";
 //const
 import * as COLOR from "../utils/Colors";
 
-const CardProduct: React.FC<propsCard> = ({ name, categoria }) => {
+const CardCategory: React.FC<propsCategory> = ({ categoria }) => {
   return (
     <Box
       as="div"
-      w="18rem"
+      w={{ base: "90%", sm: "90%" }}
       bg={useColorModeValue("gray.200", COLOR.darkMin)}
-      borderRadius={15}
+      borderTopRadius={15}
+      borderBottomRadius={10}
       m="auto"
     >
       <Box p={0}>
@@ -35,4 +35,4 @@ const CardProduct: React.FC<propsCard> = ({ name, categoria }) => {
   );
 };
 
-export default CardProduct;
+export default CardCategory;

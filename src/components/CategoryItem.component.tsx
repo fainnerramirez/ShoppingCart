@@ -2,10 +2,10 @@ import { useColorModeValue, SimpleGrid } from "@chakra-ui/react";
 import CardProduct from "./Card.component";
 import * as COLOR from "../utils/Colors";
 
-const ProductItem: React.FC = () => {
+const CategoryItem: React.FC = () => {
   const color = useColorModeValue(COLOR.dark, "gray.50");
 
-  const products = [
+  const categorys = [
     {
       id: 1,
       productName: "product 1",
@@ -29,18 +29,12 @@ const ProductItem: React.FC = () => {
   ];
 
   return (
-    <SimpleGrid columns={[1, 2, 3, 4]} spacing="10px">
-      {products.map((product) => {
-        return (
-          <CardProduct
-            key={product.id}
-            name={product.productName}
-            categoria={product.categoria}
-          />
-        );
+    <SimpleGrid columns={[1, 2, 3, 4]} spacingY="20px" mb={10}>
+      {categorys.map((category) => {
+        return <CardProduct key={category.id} categoria={category.categoria} />;
       })}
     </SimpleGrid>
   );
 };
 
-export default ProductItem;
+export default CategoryItem;
