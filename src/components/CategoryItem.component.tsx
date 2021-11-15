@@ -1,5 +1,5 @@
 import { useColorModeValue, SimpleGrid } from "@chakra-ui/react";
-import CardProduct from "./Card.component";
+import CardCategory from "./CardCategorys.component";
 import * as COLOR from "../utils/Colors";
 
 const CategoryItem: React.FC = () => {
@@ -31,7 +31,9 @@ const CategoryItem: React.FC = () => {
   return (
     <SimpleGrid columns={[1, 2, 3, 4]} spacingY="20px" mb={10}>
       {categorys.map((category) => {
-        return <CardProduct key={category.id} categoria={category.categoria} />;
+        return (
+          <CardCategory key={category.id} categoria={category.categoria} />
+        );
       })}
     </SimpleGrid>
   );

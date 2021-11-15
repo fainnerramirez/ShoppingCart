@@ -1,4 +1,4 @@
-import { Box, Image, Button, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { propsCategory } from "../utils/Types";
 //const
 import * as COLOR from "../utils/Colors";

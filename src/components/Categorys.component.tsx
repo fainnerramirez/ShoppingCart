@@ -5,9 +5,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import CategoryItem from "./CategoryItem.component";
-//Styled-component
 
-const Category: React.FC = (props) => {
+const Categorys: React.FC = (props) => {
   return (
     <Container maxW="container.xl" p={0}>
       <Heading
@@ -22,4 +21,4 @@ const Category: React.FC = (props) => {
   );
 };
 
-export default Category;
+export default Categorys;
