@@ -1,10 +1,10 @@
-import { extendTheme, withDefaultVariant  } from "@chakra-ui/react";
-import "@fontsource/montserrat"
-import "@fontsource/open-sans"
-import "@fontsource/inter"
+import { extendTheme, withDefaultVariant } from "@chakra-ui/react";
+import "@fontsource/montserrat";
+import "@fontsource/open-sans";
+import "@fontsource/inter";
+import "@fontsource/nunito";
 
 export const theme = extendTheme(
-
   //withDefaultVariant({ variant: "outline", components: ["Button"] }),
 
   {
@@ -34,19 +34,14 @@ export const theme = extendTheme(
         },
       },
     },
-    
+
     styles: {
-      global: {
-        body: {
-          bg: "gray.50",
-          color: "gray.900"
-        }
-      },
+      global: {},
     },
 
     fonts: {
-      heading: 'Montserrat',
-      body: 'Inter', 
-    }
+      heading: "Nunito",
+      body: "Nunito",
+    },
   }
 );

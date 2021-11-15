@@ -1,18 +1,18 @@
 export type propsNavbar = {
-    brand: string
-}
+  brand: string;
+};
 
 export type propsHome = {
-    title: string,
-    subtitle: string,
-    description: string
-}
+  title: string;
+  subtitle: string;
+  description: string;
+};
 
 export type propsFooter = {
-    footer: string
-}
+  footer: string;
+};
 
 export type propsCard = {
-    name: string,
-    description: string
-}
+  name: string;
+  categoria: string;
+};

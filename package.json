@@ -9,6 +9,7 @@
     "@emotion/styled": "^11.3.0",
     "@fontsource/inter": "^4.5.0",
     "@fontsource/montserrat": "^4.5.1",
+    "@fontsource/nunito": "^4.5.0",
     "@fontsource/open-sans": "^4.5.2",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
@@ -54,7 +55,6 @@
   },
   "description": "En este proyecto colaboran Fainner Ramirez y Carlos Borrego",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fainnerramirez/shoppingCart.git"
