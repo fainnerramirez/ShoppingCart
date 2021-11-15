@@ -8,22 +8,18 @@ const CategoryItem: React.FC = () => {
   const categorys = [
     {
       id: 1,
-      productName: "product 1",
       categoria: "Deportes",
     },
     {
       id: 2,
-      productName: "product 1",
       categoria: "Comida",
     },
     {
       id: 3,
-      productName: "product 1",
       categoria: "Farmacia",
     },
     {
       id: 4,
-      productName: "product 1",
       categoria: "Express",
     },
   ];

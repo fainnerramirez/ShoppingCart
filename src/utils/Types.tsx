@@ -14,7 +14,6 @@ export type propsFooter = {
 
 export type propsCard = {
   name: string;
-  categoria: string;
 };
 
 export type propsCategory = {

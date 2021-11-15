@@ -15,7 +15,7 @@ const CardCategory: React.FC<propsCategory> = ({ categoria }) => {
     >
       <Box p={0}>
         <Image
-          src="https://i.imgur.com/fa1xDYZ.jpg"
+          src="https://i.imgur.com/nwDRFEe.jpg"
           alt="Image product"
           borderTopRadius={15}
           borderBottomRadius={50}
