@@ -14,17 +14,16 @@ import {
   useColorMode,
   useColorModeValue,
   Stack,
-  Container,
   Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { BiCool } from "react-icons/bi";
+import { RiShoppingCartLine } from "react-icons/ri";
 import { propsNavbar } from "../utils/Types";
 import * as COLOR from "../utils/Colors";
 import { Link } from "react-router-dom";
 
 const Navbar: React.FC<propsNavbar> = ({ brand }) => {
-  const LinksUser = ["Perfil", "Mis compras"];
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const color = useColorModeValue(COLOR.dark, "gray.50");
@@ -33,7 +32,7 @@ const Navbar: React.FC<propsNavbar> = ({ brand }) => {
   const bgNavbar = useColorModeValue("gray.50", COLOR.darkMin);
 
   return (
-    <Box bg={bgNavbar} px={4}>
+    <Box bg={bgNavbar} w="full" px={4}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <IconButton
           size={"md"}
@@ -44,7 +43,7 @@ const Navbar: React.FC<propsNavbar> = ({ brand }) => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={"center"}>
-          <Box>
+          <Box display={{ base: "none", sm: "none", md: "block" }}>
             <Link to="/">
               <Text
                 bgGradient={COLOR.bgGradientText}
@@ -79,6 +78,9 @@ const Navbar: React.FC<propsNavbar> = ({ brand }) => {
           </HStack>
         </HStack>
         <Flex alignItems={"center"}>
+          <Button mr={2}>
+            <RiShoppingCartLine size="1.5rem" /> ( 0 )
+          </Button>
           <Button m={2} color="gray.50" bg={bgButton} onClick={toggleColorMode}>
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           </Button>
@@ -95,13 +97,8 @@ const Navbar: React.FC<propsNavbar> = ({ brand }) => {
             <MenuList>
               <MenuItem>DATOS</MenuItem>
               <MenuDivider />
-              {LinksUser.map((link) => {
-                return (
-                  <MenuItem key={link} icon={<BiCool />}>
-                    {link}
-                  </MenuItem>
-                );
-              })}
+              <MenuItem icon={<BiCool />}>Perfil</MenuItem>
+              <MenuItem icon={<BiCool />}>Configuración</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
@@ -110,11 +107,11 @@ const Navbar: React.FC<propsNavbar> = ({ brand }) => {
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
           <Stack as={"nav"} spacing={4}>
-            <Link to="/perfil">
-              <Text color={color}>Perfil</Text>
+            <Link to="/products">
+              <Text color={color}>Categorías</Text>
             </Link>
-            <Link to="/misCompras">
-              <Text color={color}>Mis Compras</Text>
+            <Link to="/">
+              <Text color={color}>Inicio</Text>
             </Link>
           </Stack>
         </Box>

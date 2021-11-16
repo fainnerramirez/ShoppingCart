@@ -11,6 +11,7 @@ import { propsCard } from "../utils/Types";
 import * as COLOR from "../utils/Colors";
 //icons
 import { StarIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 const CardProducts: React.FC<propsCard> = ({ name }) => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
@@ -64,7 +65,7 @@ const CardProducts: React.FC<propsCard> = ({ name }) => {
               w="90%"
               m="auto"
             >
-              Ver Detalles
+              <Link to="/products_details">Ver Detalles</Link>
             </Button>
           </Box>
         </Flex>

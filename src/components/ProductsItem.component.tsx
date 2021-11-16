@@ -28,7 +28,7 @@ const ProductsItem: React.FC = () => {
     },
     {
       id: 6,
-      productName: "Sodas",
+      productName: "Refrescos",
     },
   ];
 

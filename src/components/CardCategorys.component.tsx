@@ -2,6 +2,8 @@ import { Box, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { propsCategory } from "../utils/Types";
 //const
 import * as COLOR from "../utils/Colors";
+//Icons
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const CardCategory: React.FC<propsCategory> = ({ categoria }) => {
   return (
@@ -29,6 +31,7 @@ const CardCategory: React.FC<propsCategory> = ({ categoria }) => {
           fontWeight="bold"
         >
           {categoria}
+          <ArrowForwardIcon ml={2} w={6} h={6} />
         </Text>
       </Box>
     </Box>
