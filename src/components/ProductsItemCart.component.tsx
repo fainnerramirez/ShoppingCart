@@ -16,11 +16,11 @@ const ProductsItemCart: React.FC = () => {
         },
         {
             id: 3,
-            productName: "Zapillas niña",
+            productName: "Zapatillas niña",
         },
         {
             id: 4,
-            productName: "Bloques de construcción",
+            productName: "Bloque construcción",
         },
         {
             id: 5,
@@ -33,11 +33,11 @@ const ProductsItemCart: React.FC = () => {
     ];
 
     return (
-        <SimpleGrid columns={[]} spacingY="20px" mb={10}>
-            {carrito.map((cart) => {
-                return <CardProducts key={cart.id} name={cart.productName} />;
-            })}
-        </SimpleGrid>
+            <SimpleGrid columns={[1,2,3,2]} spacingY="20px" mb={10}>
+                {carrito.map((cart) => {
+                    return <CardProducts key={cart.id} name={cart.productName} />;
+                })}
+            </SimpleGrid>
     );
 };
 

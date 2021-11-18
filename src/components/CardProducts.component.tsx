@@ -12,6 +12,7 @@ import * as COLOR from "../utils/Colors";
 //icons
 import { StarIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
+import {MdDelete} from "react-icons/md";
 
 const CardProducts: React.FC<propsCard> = ({ name }) => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
@@ -46,6 +47,9 @@ const CardProducts: React.FC<propsCard> = ({ name }) => {
               fontWeight="bold"
             >
               {name}
+                <Button direction={{ base: "1.2rem", sm: "column", lg: "row" }}>
+                  <MdDelete style={{fontSize:'30px'}}/>
+                </Button>
             </Text>
           </Box>
           <Box p={4} display="flex">
