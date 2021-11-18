@@ -1,3 +1,5 @@
+import { products } from "../data/DataProducts";
+
 export type propsNavbar = {
   brand: string;
 };
@@ -14,6 +16,7 @@ export type propsFooter = {
 
 export type propsCard = {
   name: string;
+  score: number;
 };
 
 export type propsCategory = {

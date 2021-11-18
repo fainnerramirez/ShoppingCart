@@ -14,7 +14,7 @@ import { StarIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import {MdDelete} from "react-icons/md";
 
-const CardProducts: React.FC<propsCard> = ({ name }) => {
+const CardProducts: React.FC<propsCard> = ({ name, score }) => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
 
   return (
@@ -52,13 +52,13 @@ const CardProducts: React.FC<propsCard> = ({ name }) => {
                 </Button>
             </Text>
           </Box>
-          <Box p={4} display="flex">
+          <Box p={4} display="flex" alignItems={"center"}>
             <StarIcon mr={1} color={COLOR.primary} />
             <StarIcon mr={1} color={COLOR.primary} />
             <StarIcon mr={1} color={COLOR.primary} />
             <StarIcon mr={1} color={COLOR.primary} />
             <StarIcon mr={1} />
-            <p>4.8 (45)</p>
+            <Text m={2}>{score}</Text>
           </Box>
           <Box display="flex" alignItems="center" mb={5} w="full">
             <Button

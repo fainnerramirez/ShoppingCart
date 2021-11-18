@@ -42,6 +42,7 @@ const ProdusctsDetails: React.FC = () => {
           w={{ base: "100%", sm: "100%", lg: "80%" }}
         >
           <Box>
+            <Text>Categoria: Pastelería</Text>
             <Heading textAlign={{ base: "center", md: "left" }}>
               Name Product
             </Heading>
