@@ -1,5 +1,5 @@
 //Chakra UI
-import { Container, useColorModeValue } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 //React router dom
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //Pages

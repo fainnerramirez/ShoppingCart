@@ -3,10 +3,11 @@ import Cart from "../components/CartComponent";
 
 const CartPage: React.FC = () => {
   const colorDivider = useColorModeValue("gray.400", "gray.300");
+
   return (
     <Container maxW="container.xl" p={0}>
       <Divider borderColor={colorDivider} />
-      <Cart/>
+      <Cart />
     </Container>
   );
 };
