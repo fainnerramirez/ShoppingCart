@@ -11,6 +11,7 @@ import Layout from "./components/Layout.component";
 import NotFound404 from "./components/NotFound.component";
 //const
 import { ROUTE } from "./utils/Route";
+import CartPage from "./pages/Cart.page";
 
 const App: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const App: React.FC = () => {
               path={ROUTE.PRODUCT_DETAILS}
               component={ProdusctsDetailsPage}
             />
+            <Route exact path={ROUTE.CART} component={CartPage} />
             <Route path="*" component={NotFound404} />
           </Switch>
         </Layout>
