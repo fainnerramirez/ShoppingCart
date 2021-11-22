@@ -16,6 +16,7 @@ import { propsHome } from "../utils/Types";
 import { Link } from "react-router-dom";
 //Const
 import * as COLOR from "../utils/Colors";
+import { motion } from "framer-motion";
 
 const Home: React.FC<propsHome> = ({ title, subtitle, description }) => {
   const color = useColorModeValue(COLOR.dark, "gray.50");
@@ -45,6 +46,7 @@ const Home: React.FC<propsHome> = ({ title, subtitle, description }) => {
               {subtitle}
             </Text>
           </Heading>
+
           <Text
             mt={10}
             fontSize={{ base: "1rem", sm: "1rem", md: "1.5rem", lg: "2rem" }}
@@ -63,7 +65,6 @@ const Home: React.FC<propsHome> = ({ title, subtitle, description }) => {
             </Button>
           </Link>
         </Box>
-        
       </Flex>
     </Container>
   );

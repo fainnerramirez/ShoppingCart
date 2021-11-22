@@ -9,7 +9,7 @@ const ProductsItem: React.FC = () => {
         return (
           <CardProducts
             key={product.id}
-            name={product.productName}
+            name={product.name}
             score={product.score}
           />
         );

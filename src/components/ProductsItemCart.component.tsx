@@ -1,10 +1,7 @@
-import { useColorModeValue, SimpleGrid } from "@chakra-ui/react";
-import * as COLOR from "../utils/Colors";
+import { SimpleGrid } from "@chakra-ui/react";
 import CardProducts from "./CardProducts.component";
 
 const ProductsItemCart: React.FC = () => {
-  const color = useColorModeValue(COLOR.dark, "gray.50");
-
   const carrito = [
     {
       id: 1,
@@ -39,7 +36,7 @@ const ProductsItemCart: React.FC = () => {
   ];
 
   return (
-    <SimpleGrid columns={[]} spacingY="20px" mb={10}>
+    <SimpleGrid columns={[1, 2, 3, 2]} spacingY="20px" mb={10}>
       {carrito.map((cart) => {
         return (
           <CardProducts
