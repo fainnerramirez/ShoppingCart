@@ -15,6 +15,7 @@ import {
   useColorModeValue,
   Stack,
   Text,
+  Tag,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { BiCool } from "react-icons/bi";
@@ -78,11 +79,12 @@ const Navbar: React.FC<propsNavbar> = ({ brand }) => {
           </HStack>
         </HStack>
         <Flex alignItems={"center"}>
-          <Link to="cart">
+          <Link to="/cart">
             <Button mr={2}>
               {" "}
               {/*boton carrito*/}
-              <RiShoppingCartLine size="1.5rem" /> ( 0 )
+              <RiShoppingCartLine size="1.5rem" />
+              <Tag ml="1">( 0 )</Tag>
             </Button>
           </Link>
           <Button
