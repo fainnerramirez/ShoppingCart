@@ -78,12 +78,20 @@ const Navbar: React.FC<propsNavbar> = ({ brand }) => {
           </HStack>
         </HStack>
         <Flex alignItems={"center"}>
-        <Link to="cart">
-            <Button mr={2}> {/*boton carrito*/}
+          <Link to="cart">
+            <Button mr={2}>
+              {" "}
+              {/*boton carrito*/}
               <RiShoppingCartLine size="1.5rem" /> ( 0 )
             </Button>
-        </Link>
-          <Button m={2} color="gray.50" bg={bgButton} onClick={toggleColorMode}>
+          </Link>
+          <Button
+            m={2}
+            color="gray.50"
+            bg={bgButton}
+            onClick={toggleColorMode}
+            _focus={{ boxShadow: "0 0 0 0 0 transparent" }}
+          >
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           </Button>
           <Menu>

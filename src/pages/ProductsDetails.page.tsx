@@ -11,6 +11,7 @@ import {
   useColorModeValue,
   Button,
   Container,
+  Tag,
 } from "@chakra-ui/react";
 import * as COLOR from "../utils/Colors";
 import { RiShoppingCartLine } from "react-icons/ri";
@@ -42,7 +43,9 @@ const ProdusctsDetails: React.FC = () => {
           w={{ base: "100%", sm: "100%", lg: "80%" }}
         >
           <Box>
-            <Text>Categoria: Pastelería</Text>
+            <Text>
+              Categoria: <Tag>Pastelería</Tag>
+            </Text>
             <Heading textAlign={{ base: "center", md: "left" }}>
               Name Product
             </Heading>

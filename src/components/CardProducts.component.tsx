@@ -20,9 +20,6 @@ import { products } from "../data/DataProducts";
 const CardProducts: React.FC<propsCard> = ({ name, score }) => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
 
-  const { productState } = useContext(ProductContextApp);
-  console.log(productState);
-
   const handleClick = (ev: React.MouseEvent<HTMLInputElement>) => {};
 
   return (
@@ -55,9 +52,6 @@ const CardProducts: React.FC<propsCard> = ({ name, score }) => {
               fontWeight="bold"
             >
               {name}
-              <Button direction={{ base: "1.2rem", sm: "column", lg: "row" }}>
-                <MdDelete style={{ fontSize: "30px" }} />
-              </Button>
             </Text>
           </Box>
           <Box p={4} display="flex" alignItems={"center"}>

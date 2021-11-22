@@ -7,10 +7,7 @@ type ProductAction =
   | { type: "INCREMENT_PRODUCT"; payload: Product }
   | { type: "DECREMENT_PRODUCT"; payload: Product };
 
-export const productReducer = (
-  state: initialState,
-  action: ProductAction
-): initialState => {
+export const productReducer = (state: initialState, action: ProductAction) => {
   switch (action.type) {
     case "ADD_PRODUCT":
       return {
