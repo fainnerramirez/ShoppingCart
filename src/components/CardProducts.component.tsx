@@ -14,7 +14,6 @@ import { StarIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import React, { useContext } from "react";
-import { ProductContextApp } from "../context/ProductsContext";
 import { products } from "../data/DataProducts";
 
 const CardProducts: React.FC<propsCard> = ({ name, score }) => {
