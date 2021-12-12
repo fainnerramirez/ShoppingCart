@@ -1,7 +1,7 @@
 import Navbar from "./Navbar.component";
 import Footer from "./Footer.component";
 
-const Layout: React.FC = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <span>
       <Navbar brand="SHOPPING CART" />

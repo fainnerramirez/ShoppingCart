@@ -16,7 +16,7 @@ import {
 import * as COLOR from "../utils/Colors";
 import { RiShoppingCartLine } from "react-icons/ri";
 
-const ProdusctsDetails: React.FC = () => {
+const ProdusctsDetails = () => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
 
   return (

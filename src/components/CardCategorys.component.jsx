@@ -1,11 +1,10 @@
 import { Box, Image, Text, useColorModeValue } from "@chakra-ui/react";
-import { propsCategory } from "../utils/Types";
 //const
 import * as COLOR from "../utils/Colors";
 //Icons
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
-const CardCategory: React.FC<propsCategory> = ({ categoria }) => {
+const CardCategory = ({ categoria }) => {
   return (
     <Box
       as="div"

@@ -1,6 +1,6 @@
 import ProdusctsDetails from "../components/ProductsDetails.component";
 
-const ProdusctsDetailsPage: React.FC = () => {
+const ProdusctsDetailsPage = () => {
   return <ProdusctsDetails />;
 };
 

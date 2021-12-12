@@ -2,7 +2,7 @@ import { useColorModeValue, SimpleGrid } from "@chakra-ui/react";
 import CardCategory from "./CardCategorys.component";
 import * as COLOR from "../utils/Colors";
 
-const CategoryItem: React.FC = () => {
+const CategoryItem = () => {
   const color = useColorModeValue(COLOR.dark, "gray.50");
 
   const categorys = [

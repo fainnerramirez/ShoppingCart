@@ -20,11 +20,10 @@ import {
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { BiCool } from "react-icons/bi";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { propsNavbar } from "../utils/Types";
 import * as COLOR from "../utils/Colors";
 import { Link } from "react-router-dom";
 
-const Navbar: React.FC<propsNavbar> = ({ brand }) => {
+const Navbar = ({ brand }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const color = useColorModeValue(COLOR.dark, "gray.50");
@@ -74,6 +73,16 @@ const Navbar: React.FC<propsNavbar> = ({ brand }) => {
                 colorScheme={COLOR.primary}
               >
                 Inicio
+              </Button>
+            </Link>
+            <Link to="/add-product">
+              <Button
+                color={COLOR.primary}
+                fontWeight={"bold"}
+                variant="outline"
+                colorScheme={COLOR.primary}
+              >
+                Crear producto
               </Button>
             </Link>
           </HStack>

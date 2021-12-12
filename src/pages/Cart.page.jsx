@@ -1,7 +1,7 @@
 import { Container, Divider, useColorModeValue } from "@chakra-ui/react";
 import Cart from "../components/CartComponent";
 
-const CartPage: React.FC = () => {
+const CartPage = () => {
   const colorDivider = useColorModeValue("gray.400", "gray.300");
 
   return (

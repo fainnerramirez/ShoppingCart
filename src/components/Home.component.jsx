@@ -11,16 +11,22 @@ import {
 //Icons
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 //Types
-import { propsHome } from "../utils/Types";
 //react-router-dom
 import { Link } from "react-router-dom";
 //Const
 import * as COLOR from "../utils/Colors";
-import { motion } from "framer-motion";
+import { ProductContext } from "../context/ProductContext";
+import { useContext, useEffect } from "react";
 
-const Home: React.FC<propsHome> = ({ title, subtitle, description }) => {
+const Home = ({ title, subtitle, description }) => {
   const color = useColorModeValue(COLOR.dark, "gray.50");
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
+
+  const { products } = useContext(ProductContext);
+
+  useEffect(() => {
+    localStorage.setItem("TODOS", JSON.stringify(products));
+  }, [products]);
 
   return (
     <Container maxW={{ base: "100%", sm: "100%", md: "70%", lg: "80%" }} p={0}>

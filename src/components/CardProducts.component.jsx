@@ -6,20 +6,20 @@ import {
   Flex,
   Button,
 } from "@chakra-ui/react";
-import { propsCard } from "../utils/Types";
 //const
 import * as COLOR from "../utils/Colors";
 //icons
 import { StarIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
-import { MdDelete } from "react-icons/md";
-import React, { useContext } from "react";
-import { products } from "../data/DataProducts";
+import { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 
-const CardProducts: React.FC<propsCard> = ({ name, score }) => {
+const CardProducts = ({ name, score }) => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
 
-  const handleClick = (ev: React.MouseEvent<HTMLInputElement>) => {};
+  const { products, handleAddProduct } = useContext(ProductContext);
+
+  console.log("context", products);
 
   return (
     <Box
@@ -71,6 +71,17 @@ const CardProducts: React.FC<propsCard> = ({ name, score }) => {
               m="auto"
             >
               <Link to="/products_details">Ver Detalles</Link>
+            </Button>
+            <Button
+              as="a"
+              bg={bgButton}
+              color="gray.50"
+              cursor="pointer"
+              w="90%"
+              m="auto"
+              onClick={() => handleAddProduct()}
+            >
+              Agregar
             </Button>
           </Box>
         </Flex>

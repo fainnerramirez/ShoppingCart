@@ -1,6 +1,6 @@
 import Home from "../components/Home.component";
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   return (
     <Home
       title="La plataforma que tiene tus productos favoritos"

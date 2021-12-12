@@ -3,7 +3,7 @@ import { extendTheme } from "@chakra-ui/react";
 import "@fontsource/nunito";
 
 const styles = {
-  global: (props: any) => ({
+  global: (props) => ({
     body: {
       fontFamily: "body",
       color: mode("gray.800", "whiteAlpha.900")(props),

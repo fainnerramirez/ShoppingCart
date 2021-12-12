@@ -1,12 +1,7 @@
-import {
-  Container,
-  Heading,
-  Divider,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Container, Heading } from "@chakra-ui/react";
 import CategoryItem from "./CategoryItem.component";
 
-const Categorys: React.FC = (props) => {
+const Categorys = (props) => {
   return (
     <Container maxW="container.xl" p={0}>
       <Heading

@@ -7,13 +7,14 @@ import HomePage from "./pages/Home.page";
 import ProductsPage from "./pages/Products.page";
 import ProdusctsDetailsPage from "./pages/ProductsDetails.page";
 import CartPage from "./pages/Cart.page";
+import AddProductPage from "./pages/AddProduct.page";
 //Components Page
 import Layout from "./components/Layout.component";
 import NotFound404 from "./components/NotFound.component";
 //const
 import { ROUTE } from "./utils/Route";
 
-const App: React.FC = () => {
+const RouterApp = () => {
   return (
     <Router>
       <Container maxW="100%" p={0}>
@@ -27,6 +28,7 @@ const App: React.FC = () => {
               component={ProdusctsDetailsPage}
             />
             <Route exact path={ROUTE.CART} component={CartPage} />
+            <Route exact path={ROUTE.ADD} component={AddProductPage} />
             <Route path="*" component={NotFound404} />
           </Switch>
         </Layout>
@@ -35,4 +37,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default RouterApp;

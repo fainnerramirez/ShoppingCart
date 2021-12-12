@@ -11,7 +11,7 @@ import NotFound from "../assets/NotFound404.jpg";
 import { Link } from "react-router-dom";
 import * as COLOR from "../utils/Colors";
 
-const NotFound404: React.FC = () => {
+const NotFound404 = () => {
   const color = useColorModeValue(COLOR.primary, COLOR.secondary);
 
   return (

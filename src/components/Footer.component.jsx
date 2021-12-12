@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <Box mt={20} w={{ base: "90%", sm: "90%", xl: "100%" }} m={"auto"}>
       <Box py={7}>

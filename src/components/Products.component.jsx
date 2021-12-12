@@ -1,7 +1,7 @@
 import { Container, Heading } from "@chakra-ui/react";
 import ProductsItem from "./ProductsItem.component";
 
-const Products: React.FC = () => {
+const Products = () => {
   return (
     <Container maxW="container.xl" p={0}>
       <Heading

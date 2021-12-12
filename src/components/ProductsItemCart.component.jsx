@@ -1,7 +1,7 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import CardProducts from "./CardProducts.component";
 
-const ProductsItemCart: React.FC = () => {
+const ProductsItemCart = () => {
   const carrito = [
     {
       id: 1,
