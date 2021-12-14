@@ -1,4 +1,4 @@
-# Aplicación de carrito de compras para PW
+# Aplicación de carrito de compras para PROGRAMACIÓN WEB
 En este proyecto colaboran Fainner Ramirez y Carlos Borrego
 
 ## Tecnologías
