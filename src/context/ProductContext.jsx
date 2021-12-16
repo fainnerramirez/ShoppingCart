@@ -6,7 +6,7 @@ import { ProductReducer } from "./ProductReducer";
 export const ProductContext = createContext();
 
 const init = () => {
-  return JSON.parse(localStorage.getItem("TODOS")) || [];
+  return [];
 };
 
 export const ProductProvider = ({ children }) => {
