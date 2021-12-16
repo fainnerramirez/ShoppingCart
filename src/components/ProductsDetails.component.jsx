@@ -15,9 +15,13 @@ import {
 } from "@chakra-ui/react";
 import * as COLOR from "../utils/Colors";
 import { RiShoppingCartLine } from "react-icons/ri";
+import { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 
 const ProdusctsDetails = () => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
+
+  const { products } = useContext(ProductContext);
 
   return (
     <Container maxW="container.xl">

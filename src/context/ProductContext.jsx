@@ -3,7 +3,9 @@ import { uuid } from "uuidv4";
 import useForm from "../custom/Hooks/useForm";
 import { ProductReducer } from "./ProductReducer";
 
-export const ProductContext = createContext([{}]);
+const initialState = [];
+
+export const ProductContext = createContext(initialState);
 
 const init = () => {
   return JSON.parse(localStorage.getItem("TODOS")) || [];
@@ -24,19 +26,22 @@ export const ProductProvider = ({ children }) => {
     score: 0.0,
   });
 
-  const handleAddProduct = () => {
-    console.log("add todo");
+  const handleAddProduct = (e) => {
+    e.preventDefault();
+
+    console.log("add product");
     const newTodo = {
       id: uuid(),
       category: category,
       nameProduct: nameProduct,
       description: description,
       price: price,
-      score: score,
+      score: (Math.random() * 5).toFixed(1),
       select: false,
     };
 
     dispatch({ type: "ADD", payload: newTodo });
+    reset();
   };
 
   const handleUpdateProduct = () => {

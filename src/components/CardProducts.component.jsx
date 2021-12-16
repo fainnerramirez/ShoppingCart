@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 
-const CardProducts = ({ name, score }) => {
+const CardProducts = ({ nameProduct, score }) => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
 
   const { products, handleAddProduct } = useContext(ProductContext);
@@ -50,7 +50,7 @@ const CardProducts = ({ name, score }) => {
               fontSize="1.3rem"
               fontWeight="bold"
             >
-              {name}
+              {nameProduct}
             </Text>
           </Box>
           <Box p={4} display="flex" alignItems={"center"}>
@@ -79,7 +79,6 @@ const CardProducts = ({ name, score }) => {
               cursor="pointer"
               w="90%"
               m="auto"
-              onClick={() => handleAddProduct()}
             >
               Agregar
             </Button>
