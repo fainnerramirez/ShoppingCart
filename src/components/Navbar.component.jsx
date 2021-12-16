@@ -22,6 +22,8 @@ import { BiCool } from "react-icons/bi";
 import { RiShoppingCartLine } from "react-icons/ri";
 import * as COLOR from "../utils/Colors";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 
 const Navbar = ({ brand }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,6 +32,8 @@ const Navbar = ({ brand }) => {
   const colorButton = useColorModeValue("gray.900", "gray.50");
   const bgButton = useColorModeValue(COLOR.primary, "gray.900");
   const bgNavbar = useColorModeValue("gray.50", COLOR.darkMin);
+
+  const { products } = useContext(ProductContext);
 
   return (
     <Box bg={bgNavbar} w="full" px={4}>
@@ -88,12 +92,11 @@ const Navbar = ({ brand }) => {
           </HStack>
         </HStack>
         <Flex alignItems={"center"}>
-          <Link to="/cart">
+          <Link to="/products-user">
             <Button mr={2}>
-              {" "}
               {/*boton carrito*/}
               <RiShoppingCartLine size="1.5rem" />
-              <Tag ml="1">( 0 )</Tag>
+              <Tag ml="1">(0)</Tag>
             </Button>
           </Link>
           <Button

@@ -3,10 +3,14 @@ export const ProductReducer = (state = [], action) => {
     case "ADD":
       return [...state, action.payload];
     case "DELETE":
-      return state.filter((todo) => todo.id !== action.payload);
-    case "SELECTED":
-      return state.map((todo) =>
-        todo.id === action.payload ? { ...todo, select: !todo.select } : todo
+      return state.filter((product) => product.id !== action.payload);
+    case "ADD_TO_CART":
+      return state.map((product) =>
+        product.id === action.payload ? { ...product, select: true } : product
+      );
+    case "DETAILS":
+      return state.map((product) =>
+        product.id === action.payload ? product : state
       );
     default:
       return state;

@@ -3,9 +3,7 @@ import { uuid } from "uuidv4";
 import useForm from "../custom/Hooks/useForm";
 import { ProductReducer } from "./ProductReducer";
 
-const initialState = [];
-
-export const ProductContext = createContext(initialState);
+export const ProductContext = createContext();
 
 const init = () => {
   return JSON.parse(localStorage.getItem("TODOS")) || [];
@@ -58,12 +56,16 @@ export const ProductProvider = ({ children }) => {
     reset();
   };
 
-  const handleDeleteProduct = (idTodo) => {
-    dispatch({ type: "DELETE", payload: idTodo });
+  const handleDeleteProduct = (idProduct) => {
+    dispatch({ type: "DELETE", payload: idProduct });
   };
 
-  const handleSelectedProduct = (idTodo) => {
-    dispatch({ type: "SELECTED", payload: idTodo });
+  const handleAddToCartProduct = (idProduct) => {
+    dispatch({ type: "ADD_TO_CART", payload: idProduct });
+  };
+
+  const handleDetailsProducts = (idProduct) => {
+    dispatch({ type: "DETAILS", payload: idProduct });
   };
 
   return (
@@ -73,8 +75,9 @@ export const ProductProvider = ({ children }) => {
         handleAddProduct,
         handleUpdateProduct,
         handleDeleteProduct,
-        handleSelectedProduct,
+        handleAddToCartProduct,
         handleInputChange,
+        handleDetailsProducts,
       }}
     >
       {children}
