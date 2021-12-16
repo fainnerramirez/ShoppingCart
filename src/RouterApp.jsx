@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/Home.page";
 import ProductsPage from "./pages/Products.page";
 import ProdusctsDetailsPage from "./pages/ProductsDetails.page";
-import CartPage from "./pages/Cart.page";
 import AddProductPage from "./pages/AddProduct.page";
 //Components Page
 import Layout from "./components/Layout.component";
@@ -27,7 +26,6 @@ const RouterApp = () => {
               path={ROUTE.PRODUCT_DETAILS}
               component={ProdusctsDetailsPage}
             />
-            <Route exact path={ROUTE.CART} component={CartPage} />
             <Route exact path={ROUTE.ADD} component={AddProductPage} />
             <Route path="*" component={NotFound404} />
           </Switch>

@@ -17,7 +17,7 @@ import { ProductContext } from "../context/ProductContext";
 const CardProducts = ({ nameProduct, score }) => {
   const bgButton = useColorModeValue(COLOR.secondary, COLOR.primary);
 
-  const { products, handleAddProduct } = useContext(ProductContext);
+  const { products } = useContext(ProductContext);
 
   console.log("context", products);
 

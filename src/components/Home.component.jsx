@@ -57,7 +57,7 @@ const Home = ({ title, subtitle, description }) => {
 
         <Box mt={10}>
           <Link to="/products">
-            <Button as="a" bg={bgButton} color="gray.50" cursor="pointer">
+            <Button bg={bgButton} color="gray.50" cursor="pointer">
               Comprar
               <ArrowForwardIcon ml={2} w={6} h={5} />
             </Button>
