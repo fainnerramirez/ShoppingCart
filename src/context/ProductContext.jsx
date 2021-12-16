@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 import { uuid } from "uuidv4";
 import useForm from "../custom/Hooks/useForm";
 import { ProductReducer } from "./ProductReducer";
@@ -11,6 +11,7 @@ const init = () => {
 
 export const ProductProvider = ({ children }) => {
   const [products, dispatch] = useReducer(ProductReducer, [], init);
+  const [countProductUser, setCountProductUser] = useState(0);
 
   const [
     { category, nameProduct, description, price, score },
@@ -26,14 +27,13 @@ export const ProductProvider = ({ children }) => {
 
   const handleAddProduct = (e) => {
     e.preventDefault();
-
-    console.log("add product");
     const newTodo = {
       id: uuid(),
       category: category,
       nameProduct: nameProduct,
       description: description,
       price: price,
+      count: 0,
       score: (Math.random() * 5).toFixed(1),
       select: false,
     };
@@ -61,6 +61,7 @@ export const ProductProvider = ({ children }) => {
   };
 
   const handleAddToCartProduct = (idProduct) => {
+    setCountProductUser(countProductUser + 1);
     dispatch({ type: "ADD_TO_CART", payload: idProduct });
   };
 
@@ -78,6 +79,8 @@ export const ProductProvider = ({ children }) => {
         handleAddToCartProduct,
         handleInputChange,
         handleDetailsProducts,
+        countProductUser,
+        setCountProductUser,
       }}
     >
       {children}

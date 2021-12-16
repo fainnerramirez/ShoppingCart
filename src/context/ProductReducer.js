@@ -6,7 +6,9 @@ export const ProductReducer = (state = [], action) => {
       return state.filter((product) => product.id !== action.payload);
     case "ADD_TO_CART":
       return state.map((product) =>
-        product.id === action.payload ? { ...product, select: true } : product
+        product.id === action.payload
+          ? { ...product, select: true, count: product.count + 1 }
+          : product
       );
     case "DETAILS":
       return state.map((product) =>

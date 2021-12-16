@@ -33,7 +33,7 @@ const Navbar = ({ brand }) => {
   const bgButton = useColorModeValue(COLOR.primary, "gray.900");
   const bgNavbar = useColorModeValue("gray.50", COLOR.darkMin);
 
-  const { products } = useContext(ProductContext);
+  const { products, countProductUser } = useContext(ProductContext);
 
   return (
     <Box bg={bgNavbar} w="full" px={4}>
@@ -96,7 +96,7 @@ const Navbar = ({ brand }) => {
             <Button mr={2}>
               {/*boton carrito*/}
               <RiShoppingCartLine size="1.5rem" />
-              <Tag ml="1">(0)</Tag>
+              <Tag ml="1">({countProductUser})</Tag>
             </Button>
           </Link>
           <Button
